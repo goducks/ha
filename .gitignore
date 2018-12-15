@@ -1,0 +1,13 @@
+
+.uuid
+.storage/onboarding
+.storage/hassio
+.storage/core.entity_registry
+.storage/core.device_registry
+.storage/core.config_entries
+.storage/auth_provider.homeassistant
+.storage/auth_module.notify
+.HA_VERSION
+.ios.conf
+.storage/auth
+secrets.yaml
