@@ -1,0 +1,15 @@
+# known devices
+cr_iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: Chad
+  picture: /local/duck.jpg
+  track: true
+teris_iphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: Teri
+  picture: /local/tbear.jpg
+  track: true

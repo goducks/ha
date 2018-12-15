@@ -1,0 +1,21 @@
+# Sensors, sensors.yaml
+
+# Weather prediction                                 
+# - platform: yr                                       
+                
+# Speedtest
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    # - upload
+
+
+# DarkSky weather
+- platform: darksky
+  api_key: !secret "darksky_api_key"
+  monitored_conditions:
+    - summary
+    - temperature
+    # - icon
+    # - nearest_storm_distance

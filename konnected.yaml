@@ -1,0 +1,31 @@
+access_token: !secret "konnected_guid"
+api_host: !secret "konnected_ha_ip"
+devices:
+  - id: "807d3a2347cb"
+    binary_sensors:
+      - zone: 1
+        type: door
+        name: "Front & Garage Doors"
+      - zone: 2
+        type: window
+        name: "Ground Floor Windows"
+      - zone: 3
+        type: door
+        name: "Patio Doors"
+      - zone: 4
+        type: window
+        name: "MBR Windows"
+      - zone: 5
+        type: window
+        name: "Upstairs Windows"
+    switches:
+      - zone: 6
+        name: 'Alarm Chime'
+        momentary: 65
+        pause: 55
+        repeat: 2  
+      - zone: out
+        name: "Alarm Siren"
+        momentary: 750
+        pause: 250 
+        repeat: 3  

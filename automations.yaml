@@ -1,0 +1,97 @@
+#--------------------------------------------------------------------------
+# Automatic HA Theme Change based on sun
+#--------------------------------------------------------------------------
+- alias: 'Automatic Theme Change'
+  hide_entity: true
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: sun.sun
+      to: above_horizon
+    - platform: state
+      entity_id: sun.sun
+      to: below_horizon
+  action:
+    - service_template: frontend.set_theme
+      data_template:
+        name: >
+          {% if states.sun.sun.state == 'above_horizon' %}
+            default
+          {% else %}
+            night 
+          {% endif %}
+#--------------------------------------------------------------------------
+# Automatic Christmas Tree Control
+#--------------------------------------------------------------------------
+- alias: 'Christmas Tree On, Weekday'
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: switch.turn_on
+      entity_id: switch.holiday_lights
+- alias: 'Christmas Tree On, Weekend'
+  hide_entity: true
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "01:00:00"
+  condition:
+    - condition: time
+      weekday:
+        - sat
+        - sun
+  action:
+    - service: switch.turn_on
+      entity_id: switch.holiday_lights
+- alias: 'Christmas Tree Off'
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '00:00:00'
+  action:
+    - service: switch.turn_off
+      entity_id: switch.holiday_lights
+#--------------------------------------------------------------------------
+# Home Alarm Notifier
+#--------------------------------------------------------------------------
+- alias: 'Home Alarm Notifier'
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.front__garage_doors
+        - binary_sensor.patio_doors
+        - binary_sensor.ground_floor_windows
+        - binary_sensor.mbr_windows
+        - binary_sensor.upstairs_windows
+      from: 'off'
+      to: 'on'
+  condition:
+    condition: state
+    entity_id: group.family
+    state: 'not_home'
+  action:
+    - service: notify.ios_cr_iphone
+      data_template:
+        title: 'Robot Home'
+        message: >
+          {{ trigger.to_state.name }}
+          opened, {{ now().strftime('%r') }}
+        data:
+          subtitle: '{{ now().strftime("%m-%d-%Y") }}'
+          push:
+            badge: 5
+            thread-id: 'Robot Home Alarm Alerts'
+#--------------------------------------------------------------------------

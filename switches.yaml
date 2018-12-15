@@ -1,0 +1,8 @@
+# Switches
+- platform: tplink
+  host: !secret "audio_receiver_ip"
+  name: "Audio Receiver"
+
+- platform: tplink
+  host: !secret "holiday_lights_ip"
+  name: "Holiday Lights"
