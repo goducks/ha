@@ -11,3 +11,5 @@
 .ios.conf
 .storage/auth
 secrets.yaml
+*.swp
+deps/

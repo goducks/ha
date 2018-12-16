@@ -89,3 +89,5 @@ script: !include scripts.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
 konnected: !include konnected.yaml
+alarm_control_panel: !include alarm.yaml
+panel_custom: !include panel_custom.yaml
