@@ -1,15 +1,15 @@
 # Sensors, sensors.yaml
 
-# Weather prediction                                 
-# - platform: yr                                       
-                
+- platform: time_date
+  display_options:
+    - time
+
 # Speedtest
 - platform: speedtest
   monitored_conditions:
     - ping
     - download
     # - upload
-
 
 # DarkSky weather
 - platform: darksky
