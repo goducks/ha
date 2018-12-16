@@ -3,6 +3,10 @@ sensor.chads_iphone_battery_state_3:
   hidden: true
 sensor.chads_iphone_battery_level_3:
   hidden: true
+sensor.chads_iphone_battery_state:
+  hidden: true
+sensor.chads_iphone_battery_level:
+  hidden: true
 sensor.teris_iphone_battery_state:
   hidden: true
 sensor.teris_iphone_battery_level:
