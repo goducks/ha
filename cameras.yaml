@@ -1,0 +1,4 @@
+# Security cameras
+- platform: mjpeg
+  name: 'Front Door'
+  mjpeg_url: 'http://192.168.100.100'
