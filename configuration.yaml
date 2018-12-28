@@ -83,6 +83,11 @@ ios:
 # notification support
 notify: 
 
+# darksky weather
+weather:
+- platform: darksky
+  api_key: !secret "darksky_api_key"
+
 automation: !include automations.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
