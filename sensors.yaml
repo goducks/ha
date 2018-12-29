@@ -1,21 +1,25 @@
 # Sensors, sensors.yaml
 
-- platform: time_date
-  display_options:
-    - time
+# Time
+# - platform: time_date
+#   display_options:
+#    - time
 
 # Speedtest
 - platform: speedtest
   monitored_conditions:
     - ping
     - download
-    # - upload
 
 # DarkSky weather
 - platform: darksky
   api_key: !secret "darksky_api_key"
   monitored_conditions:
-    - summary
     - temperature
-    # - icon
-    # - nearest_storm_distance
+
+# System monitor
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: '/'
+    - type: processor_use

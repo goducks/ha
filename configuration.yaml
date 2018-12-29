@@ -22,9 +22,6 @@ homeassistant:
     - type: notify
       message: 'To enter fightclub, you need to say {}'
 
-# Show links to resources in log and frontend
-# introduction:
-
 # Enables the frontend
 frontend:
   themes: !include_dir_merge_named themes/
@@ -64,9 +61,6 @@ history:
 # View all events in a logbook
 logbook:
 
-# Enables a map showing the location of tracked devices
-map:
-
 # Track the sun
 sun:
 
@@ -102,4 +96,3 @@ switch: !include switches.yaml
 konnected: !include konnected.yaml
 camera: !include cameras.yaml
 alarm_control_panel: !include alarm.yaml
-panel_custom: !include panel_custom.yaml

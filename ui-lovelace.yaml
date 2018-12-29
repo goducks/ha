@@ -1,16 +1,58 @@
+#----------------------------------------------------------------------------
 title: 'Home'
+#----------------------------------------------------------------------------
 views:
   - title: 'Home'
     icon: mdi:home
     cards:
-      - type: entities
+      - type: glance
         title: 'Family'
         show_header_toggle: false 
         entities:
           - device_tracker.cr_iphone
           - device_tracker.teris_iphone
+      - type: map
+        # aspect_ratio: 16:9
+        # default_zoom: 8
+        entities:
+          - device_tracker.cr_iphone
+          - device_tracker.teris_iphone
+          - zone.home
+      - type: weather-forecast
+        entity: weather.dark_sky
+      - type: gauge
+        title: 'CPU Load'
+        unit: '%'
+        entity: sensor.processor_use
+        severity:
+          green: 0
+          yellow: 45
+          red: 85
+      - type: gauge
+        title: 'DL Speed'
+        entity: sensor.speedtest_download
+        min: 0
+        max: 120
       - type: entities
-        title: 'Home Alarm Sensors'
+        title: 'Power Switches'
+        show_header_toggle: false
+        entities:
+          - switch.audio_receiver
+          - switch.holiday_lights
+#----------------------------------------------------------------------------
+  - title: 'Home Alarm'
+#----------------------------------------------------------------------------
+    icon: mdi:security-home
+    cards:
+      - type: alarm-panel
+        name: 'Robot Home'
+        entity: alarm_control_panel.robot_home
+        states:
+          - arm_home
+          - arm_away
+          - arm_night
+      - type: entities
+        title: 'Alarm Sensors'
         show_header_toggle: false
         entities:
           - binary_sensor.front__garage_doors
@@ -18,15 +60,9 @@ views:
           - binary_sensor.ground_floor_windows
           - binary_sensor.mbr_windows
           - binary_sensor.upstairs_windows
-      - type: entities
-        title: 'Power Switches'
-        show_header_toggle: false
-        entities:
-          - switch.audio_receiver
-          - switch.holiday_lights
-      - type: weather-forecast
-        entity: weather.dark_sky
+#----------------------------------------------------------------------------
   - title: 'Cameras'
+#----------------------------------------------------------------------------
     icon: mdi:camera
     panel: true
     cards:
@@ -65,4 +101,4 @@ views:
               camera_image: camera.garage_1
             - type: picture
               image: '/local/black.jpg'
-
+#----------------------------------------------------------------------------

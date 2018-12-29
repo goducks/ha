@@ -11,8 +11,6 @@
 .ios.conf
 .storage/auth
 secrets.yaml
-alarm_log.json
-custom_components/alarm_control_panel/__pycache__/bwalarm.cpython-36.pyc
 home-assistant.log
 home-assistant_v2.db
 *.swp

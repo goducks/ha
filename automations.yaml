@@ -1,26 +1,26 @@
 #--------------------------------------------------------------------------
 # Automatic HA Theme Change based on sun
 #--------------------------------------------------------------------------
-- alias: 'Automatic Theme Change'
-  hide_entity: true
-  trigger:
-    - platform: homeassistant
-      event: start
-    - platform: state
-      entity_id: sun.sun
-      to: above_horizon
-    - platform: state
-      entity_id: sun.sun
-      to: below_horizon
-  action:
-    - service_template: frontend.set_theme
-      data_template:
-        name: >
-          {% if states.sun.sun.state == 'above_horizon' %}
-            default
-          {% else %}
-            night 
-          {% endif %}
+# - alias: 'Automatic Theme Change'
+#   hide_entity: true
+#   trigger:
+#     - platform: homeassistant
+#       event: start
+#     - platform: state
+#       entity_id: sun.sun
+#       to: above_horizon
+#     - platform: state
+#       entity_id: sun.sun
+#       to: below_horizon
+#   action:
+#     - service_template: frontend.set_theme
+#       data_template:
+#         name: >
+#           {% if states.sun.sun.state == 'above_horizon' %}
+#             default
+#           {% else %}
+#             night 
+#           {% endif %}
 #--------------------------------------------------------------------------
 # Automatic Christmas Tree Control
 #--------------------------------------------------------------------------
@@ -90,7 +90,7 @@
           {{ trigger.to_state.name }}
           opened, {{ now().strftime('%r') }}
         data:
-          subtitle: '{{ now().strftime("%m-%d-%Y") }}'
+          # subtitle: '{{ now().strftime("%m-%d-%Y") }}'
           push:
             badge: 5
             thread-id: 'Robot Home Alarm Alerts'
