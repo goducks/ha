@@ -6,3 +6,7 @@
 - platform: tplink
   host: !secret "holiday_lights_ip"
   name: "Holiday Lights"
+
+- platform: zoneminder
+  command_on: 'Modect'
+  command_off: 'Monitor'
