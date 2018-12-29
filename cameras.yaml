@@ -1,23 +1,2 @@
 # Security cameras
-- platform: mjpeg
-  name: 'Front Door'
-  mjpeg_url: 'http://192.168.100.100:2112/live'
-  username: !secret 'ipcam_user'
-  password: !secret 'ipcam_pw'
-
-- platform: mjpeg
-  name: 'Back Door'
-  mjpeg_url: 'http://192.168.100.101:2112/live'
-  username: !secret 'ipcam_user'
-  password: !secret 'ipcam_pw'
-
-- platform: mjpeg
-  name: 'Garage 1'
-  mjpeg_url: 'http://192.168.100.102:2112/live'
-  username: !secret 'ipcam_user'
-  password: !secret 'ipcam_pw'
-
-- platform: mjpeg
-  name: 'Garage 2'
-  mjpeg_url: 'http://192.168.100.103:2112/live'
-  # note un/pw crashes ipod
+- platform: zoneminder

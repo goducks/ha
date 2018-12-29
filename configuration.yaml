@@ -88,6 +88,12 @@ weather:
 - platform: darksky
   api_key: !secret "darksky_api_key"
 
+# zoneminder
+zoneminder:
+  host: !secret "za_host"
+  username: !secret "za_user"
+  password: !secret "za_pw"
+
 automation: !include automations.yaml
 group: !include groups.yaml
 script: !include scripts.yaml

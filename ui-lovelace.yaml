@@ -37,19 +37,23 @@ views:
             camera_image: camera.front_door
             show_state: false
           - type: picture-entity
+            title: 'Living Room'
+            entity: camera.living_room
+            camera_image: camera.living_room
+            show_state: false
+          - type: picture-entity
             title: 'Back Door'
             entity: camera.back_door
             camera_image: camera.back_door
             show_state: false
-          - type: horizontal-stack
-            cards:
-              - type: picture-entity
-                title: 'Garage 2'
-                entity: camera.garage_2
-                camera_image: camera.garage_2
-                show_state: false
-              - type: picture-entity
-                title: 'Garage 1'
-                entity: camera.garage_1
-                camera_image: camera.garage_1
-                show_state: false
+          - type: picture-entity
+            title: 'Kid Club'
+            entity: camera.kid_club
+            camera_image: camera.kid_club
+            show_state: false
+          - type: picture-entity
+            title: 'Garage 1'
+            entity: camera.garage_1
+            camera_image: camera.garage_1
+            show_state: false
+
