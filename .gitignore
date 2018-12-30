@@ -12,6 +12,7 @@
 .google.token
 .storage/auth
 secrets.yaml
+google_calendars.yaml
 home-assistant.log
 home-assistant_v2.db
 *.swp
