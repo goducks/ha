@@ -41,6 +41,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.holiday_lights
+
 - alias: 'Christmas Tree On, Weekend'
   hide_entity: true
   trigger:
@@ -55,6 +56,7 @@
   action:
     - service: switch.turn_on
       entity_id: switch.holiday_lights
+
 - alias: 'Christmas Tree Off'
   hide_entity: true
   trigger:
@@ -94,4 +96,52 @@
           push:
             badge: 5
             thread-id: 'Robot Home Alarm Alerts'
+#--------------------------------------------------------------------------
+# Camera Monitoring
+#--------------------------------------------------------------------------
+- alias: 'Camera MoDetect On, Presence'
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id:
+        - group.family
+      from: 'home'
+      to: 'not_home'
+  action:
+    - service: switch.turn_on
+      entity_id: group.cameraswitches
+
+- alias: 'Camera MoDetect Off, Presence'
+  hide_entity: true
+  trigger:
+    - platform: state
+      entity_id:
+        - group.family
+      from: 'not_home'
+      to: 'home'
+  action:
+    - service: switch.turn_off
+      entity_id: group.cameraswitches
+
+- alias: 'Camera MoDetect On, Time'
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '00:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: group.cameraswitches
+
+- alias: 'Camera MoDetect Off, Time'
+  hide_entity: true
+  trigger:
+    platform: time
+    at: '06:00:00'
+  condition:
+    condition: state
+    entity_id: group.family
+    state: 'home'
+  action:
+    - service: switch.turn_off
+      entity_id: group.cameraswitches
 #--------------------------------------------------------------------------

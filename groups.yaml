@@ -20,3 +20,12 @@ homealarm:
     - binary_sensor.ground_floor_windows
     - binary_sensor.mbr_windows
     - binary_sensor.upstairs_windows
+
+cameraswitches:
+  name: "All Camera Switches"
+  entities:
+    - switch.front_door_state
+    - switch.living_room_state
+    - switch.back_door_state
+    - switch.kid_club_state
+    - switch.garage_1_state
