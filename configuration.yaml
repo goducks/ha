@@ -80,13 +80,19 @@ notify:
 # darksky weather
 weather:
 - platform: darksky
-  api_key: !secret "darksky_api_key"
+  api_key: !secret 'darksky_api_key'
 
 # zoneminder
 zoneminder:
-  host: !secret "za_host"
-  username: !secret "za_user"
-  password: !secret "za_pw"
+  host: !secret 'za_host'
+  username: !secret 'za_user'
+  password: !secret 'za_pw'
+
+#google calendar integration
+google:
+  client_id: !secret 'gcal_clientid'
+  client_secret: !secret 'gcal_clientsecret'
+  track_new_calendar: false
 
 automation: !include automations.yaml
 group: !include groups.yaml

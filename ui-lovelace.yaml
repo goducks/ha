@@ -20,6 +20,12 @@ views:
           - zone.home
       - type: weather-forecast
         entity: weather.dark_sky
+      - type: entities
+        title: 'Power Switches'
+        show_header_toggle: false
+        entities:
+          - switch.audio_receiver
+          - switch.holiday_lights
       - type: gauge
         title: 'CPU Load'
         unit: '%'
@@ -33,12 +39,11 @@ views:
         entity: sensor.speedtest_download
         min: 0
         max: 120
-      - type: entities
-        title: 'Power Switches'
-        show_header_toggle: false
+      - type: glance
+        title: 'Next Trash Pickup'
+        show_header_toggle: false 
         entities:
-          - switch.audio_receiver
-          - switch.holiday_lights
+          - sensor.next_trash_pickup
 #----------------------------------------------------------------------------
   - title: 'Home Alarm'
 #----------------------------------------------------------------------------

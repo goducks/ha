@@ -23,3 +23,21 @@
     - type: disk_use_percent
       arg: '/'
     - type: processor_use
+
+# Templates
+- platform: template
+  sensors: 
+    next_trash_pickup:
+      value_template: "{{ as_timestamp(states.calendar.tds_pickup.attributes.start_time) | timestamp_custom('%A, %B %d %Y') }}"
+      friendly_name_template: >-
+        {% if 'Recycling' in states.calendar.tds_pickup.attributes.message %}
+          Recycling & Trash
+        {% else %}
+          Trash Only
+        {% endif %}
+      icon_template: >-
+        {% if 'Recycling' in states.calendar.tds_pickup.attributes.message %}
+          mdi:recycle
+        {% else %}
+          mdi:trash-can-outline
+        {% endif %}

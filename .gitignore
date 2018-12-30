@@ -9,6 +9,7 @@
 .storage/auth_module.notify
 .HA_VERSION
 .ios.conf
+.google.token
 .storage/auth
 secrets.yaml
 home-assistant.log
