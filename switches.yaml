@@ -4,8 +4,8 @@
   name: "Audio Receiver"
 
 - platform: tplink
-  host: !secret "holiday_lights_ip"
-  name: "Holiday Lights"
+  host: !secret "kid_club_lights_ip"
+  name: "Kid Club Lights"
 
 - platform: zoneminder
   command_on: 'Modect'

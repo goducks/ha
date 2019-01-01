@@ -25,7 +25,7 @@ views:
         show_header_toggle: false
         entities:
           - switch.audio_receiver
-          - switch.holiday_lights
+          - switch.kid_club_lights
       - type: gauge
         title: 'CPU Load'
         unit: '%'

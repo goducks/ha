@@ -22,49 +22,51 @@
 #             night 
 #           {% endif %}
 #--------------------------------------------------------------------------
-# Automatic Christmas Tree Control
+# Automatic Kid Club Lights, was Christmas Tree Control
 #--------------------------------------------------------------------------
-- alias: 'Christmas Tree On, Weekday'
+# - alias: 'Christmas Tree On, Weekday'
+- alias: 'Kid Club Lights On'
   hide_entity: true
   trigger:
     platform: sun
     event: sunset
-    offset: "-00:30:00"
-  condition:
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
+    offset: "-01:00:00"
+#  condition:
+#    - condition: time
+#      weekday:
+#        - mon
+#        - tue
+#        - wed
+#        - thu
+#        - fri
   action:
     - service: switch.turn_on
-      entity_id: switch.holiday_lights
+      entity_id: switch.kid_club_lights
 
-- alias: 'Christmas Tree On, Weekend'
-  hide_entity: true
-  trigger:
-    platform: sun
-    event: sunrise
-    offset: "01:00:00"
-  condition:
-    - condition: time
-      weekday:
-        - sat
-        - sun
-  action:
-    - service: switch.turn_on
-      entity_id: switch.holiday_lights
+# - alias: 'Christmas Tree On, Weekend'
+#   hide_entity: true
+#   trigger:
+#     platform: sun
+#     event: sunrise
+#     offset: "01:00:00"
+#   condition:
+#     - condition: time
+#       weekday:
+#         - sat
+#         - sun
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.kid_club_lights
 
-- alias: 'Christmas Tree Off'
+# - alias: 'Christmas Tree Off'
+- alias: 'Kid Club Lights Off'
   hide_entity: true
   trigger:
     platform: time
     at: '00:00:00'
   action:
     - service: switch.turn_off
-      entity_id: switch.holiday_lights
+      entity_id: switch.kid_club_lights
 #--------------------------------------------------------------------------
 # Home Alarm Notifier
 #--------------------------------------------------------------------------
