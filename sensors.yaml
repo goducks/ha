@@ -5,12 +5,6 @@
 #   display_options:
 #    - time
 
-# Speedtest
-- platform: speedtest
-  monitored_conditions:
-    - ping
-    - download
-
 # DarkSky weather
 - platform: darksky
   api_key: !secret "darksky_api_key"

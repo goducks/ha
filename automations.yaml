@@ -63,7 +63,7 @@
   hide_entity: true
   trigger:
     platform: time
-    at: '00:00:00'
+    at: '23:00:00'
   action:
     - service: switch.turn_off
       entity_id: switch.kid_club_lights
@@ -75,7 +75,7 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.front__garage_doors
+        - binary_sensor.front_doors
         - binary_sensor.patio_doors
         - binary_sensor.ground_floor_windows
         - binary_sensor.mbr_windows

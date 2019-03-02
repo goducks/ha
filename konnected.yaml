@@ -5,7 +5,7 @@ devices:
     binary_sensors:
       - zone: 1
         type: door
-        name: "Front & Garage Doors"
+        name: "Front Doors"
       - zone: 2
         type: window
         name: "Ground Floor Windows"

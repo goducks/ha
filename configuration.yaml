@@ -82,6 +82,9 @@ weather:
 - platform: darksky
   api_key: !secret 'darksky_api_key'
 
+# Fast.com
+# fastdotcom:
+
 # zoneminder
 zoneminder:
   host: !secret 'za_host'
@@ -93,6 +96,9 @@ google:
   client_id: !secret 'gcal_clientid'
   client_secret: !secret 'gcal_clientsecret'
   track_new_calendar: false
+
+lovelace:
+  mode: yaml
 
 automation: !include automations.yaml
 group: !include groups.yaml

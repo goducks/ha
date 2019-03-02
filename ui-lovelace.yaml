@@ -11,13 +11,6 @@ views:
         entities:
           - device_tracker.cr_iphone
           - device_tracker.teris_iphone
-      - type: map
-        # aspect_ratio: 16:9
-        # default_zoom: 8
-        entities:
-          - device_tracker.cr_iphone
-          - device_tracker.teris_iphone
-          - zone.home
       - type: weather-forecast
         entity: weather.dark_sky
       - type: entities
@@ -34,20 +27,27 @@ views:
           green: 0
           yellow: 45
           red: 85
-      - type: gauge
-        title: 'DL Speed'
-        entity: sensor.speedtest_download
-        min: 0
-        max: 120
+#      - type: gauge
+#        title: 'Fast Speed'
+#        entity: sensor.fast_com_download
+#        min: 0
+#        max: 120
       - type: glance
         title: 'Next Trash Pickup'
         show_header_toggle: false 
         entities:
           - sensor.next_trash_pickup
+      - type: map
+        # aspect_ratio: 16:9
+        # default_zoom: 8
+        entities:
+          - device_tracker.cr_iphone
+          - device_tracker.teris_iphone
+          - zone.home
 #----------------------------------------------------------------------------
   - title: 'Home Alarm'
 #----------------------------------------------------------------------------
-    icon: mdi:security-home
+    icon: mdi:security
     cards:
       - type: alarm-panel
         name: 'Robot Home'
@@ -60,7 +60,7 @@ views:
         title: 'Alarm Sensors'
         show_header_toggle: false
         entities:
-          - binary_sensor.front__garage_doors
+          - binary_sensor.front_doors
           - binary_sensor.patio_doors
           - binary_sensor.ground_floor_windows
           - binary_sensor.mbr_windows

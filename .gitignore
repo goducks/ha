@@ -1,16 +1,9 @@
 
 .uuid
-.storage/onboarding
-.storage/hassio
-.storage/core.entity_registry
-.storage/core.device_registry
-.storage/core.config_entries
-.storage/auth_provider.homeassistant
-.storage/auth_module.notify
+.storage/
 .HA_VERSION
 .ios.conf
 .google.token
-.storage/auth
 secrets.yaml
 google_calendars.yaml
 home-assistant.log

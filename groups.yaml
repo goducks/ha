@@ -15,7 +15,7 @@ family:
 homealarm:
   name: "Home Alarm Sensors"
   entities:
-    - binary_sensor.front__garage_doors
+    - binary_sensor.front_doors
     - binary_sensor.patio_doors
     - binary_sensor.ground_floor_windows
     - binary_sensor.mbr_windows
