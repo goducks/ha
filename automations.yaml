@@ -1,7 +1,8 @@
 #--------------------------------------------------------------------------
 # Automatic HA Theme Change based on sun
 #--------------------------------------------------------------------------
-# - alias: 'Automatic Theme Change'
+# - id: 'Automatic Theme Change'
+#   alias: 'Automatic Theme Change'
 #   hide_entity: true
 #   trigger:
 #     - platform: homeassistant
@@ -25,7 +26,8 @@
 # Automatic Kid Club Lights, was Christmas Tree Control
 #--------------------------------------------------------------------------
 # - alias: 'Christmas Tree On, Weekday'
-- alias: 'Kid Club Lights On'
+- id: 'Kid Club Lights On'
+  alias: 'Kid Club Lights On'
   hide_entity: true
   trigger:
     platform: sun
@@ -43,7 +45,8 @@
     - service: switch.turn_on
       entity_id: switch.kid_club_lights
 
-# - alias: 'Christmas Tree On, Weekend'
+# - id: 'Christmas Tree On, Weekend'
+#   alias: 'Christmas Tree On, Weekend'
 #   hide_entity: true
 #   trigger:
 #     platform: sun
@@ -58,8 +61,9 @@
 #     - service: switch.turn_on
 #       entity_id: switch.kid_club_lights
 
-# - alias: 'Christmas Tree Off'
-- alias: 'Kid Club Lights Off'
+# - id: 'Christmas Tree Off'
+- id: 'Kid Club Lights Off'
+  alias: 'Kid Club Lights Off'
   hide_entity: true
   trigger:
     platform: time
@@ -70,7 +74,8 @@
 #--------------------------------------------------------------------------
 # Home Alarm Notifier
 #--------------------------------------------------------------------------
-- alias: 'Home Alarm Notifier'
+- id: 'Home Alarm Notifier'
+  alias: 'Home Alarm Notifier'
   hide_entity: true
   trigger:
     - platform: state
@@ -101,7 +106,8 @@
 #--------------------------------------------------------------------------
 # Camera Monitoring
 #--------------------------------------------------------------------------
-- alias: 'Camera MoDetect On, Presence'
+- id: 'Camera MoDetect On, Presence'
+  alias: 'Camera MoDetect On, Presence'
   hide_entity: true
   trigger:
     - platform: state
@@ -113,7 +119,8 @@
     - service: switch.turn_on
       entity_id: group.cameraswitches
 
-- alias: 'Camera MoDetect Off, Presence'
+- id: 'Camera MoDetect Off, Presence'
+  alias: 'Camera MoDetect Off, Presence'
   hide_entity: true
   trigger:
     - platform: state
@@ -125,7 +132,8 @@
     - service: switch.turn_off
       entity_id: group.cameraswitches
 
-- alias: 'Camera MoDetect On, Time'
+- id: 'Camera MoDetect On, Time'
+  alias: 'Camera MoDetect On, Time'
   hide_entity: true
   trigger:
     platform: time
@@ -134,7 +142,8 @@
     - service: switch.turn_on
       entity_id: group.cameraswitches
 
-- alias: 'Camera MoDetect Off, Time'
+- id: 'Camera MoDetect Off, Time'
+  alias: 'Camera MoDetect Off, Time'
   hide_entity: true
   trigger:
     platform: time
