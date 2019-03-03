@@ -32,9 +32,9 @@ config:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
   base_url: !secret http_url
-  server_port: !secret http_port_int
-  ip_ban_enabled: true
-  login_attempts_threshold: 8
+  # server_port: !secret http_port_int
+  # ip_ban_enabled: true
+  # login_attempts_threshold: 8
   # These next two are commented out as of 12/9/2018
   # https/SSL is now served via nginx web server -- go to nginx add-on config
   # ssl_certificate: /ssl/fullchain.pem
