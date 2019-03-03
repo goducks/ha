@@ -65,7 +65,7 @@
   hide_entity: true
   trigger:
     platform: time
-    at: '23:45:00'
+    at: '23:00:00'
   action:
     - service: switch.turn_off
       entity_id: switch.kid_club_lights
