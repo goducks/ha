@@ -83,19 +83,21 @@
         - binary_sensor.ground_floor_windows
         - binary_sensor.mbr_windows
         - binary_sensor.upstairs_windows
-      from: 'off'
-      to: 'on'
   condition:
     condition: state
-    entity_id: group.family
+#    entity_id: group.family
+    entity_id: device_tracker.cr_iphone
     state: 'not_home'
   action:
     - service: notify.ios_cr_iphone
       data_template:
-        title: 'Robot Home'
+#        title: 'Robot Home'
         message: >
           {{ trigger.to_state.name }}
-          opened, {{ now().strftime('%r') }}
+          {% if trigger.to_state.state == 'on' %}Opened
+          {% else %}Closed
+          {% endif %}
+          {{ now().strftime('%r') }}
         data:
           # subtitle: '{{ now().strftime("%m-%d-%Y") }}'
           push:
@@ -110,8 +112,8 @@
   trigger:
     - platform: state
       entity_id:
-        - group.family
-      from: 'home'
+        - device_tracker.cr_iphone
+#        - group.family
       to: 'not_home'
   action:
     - service: switch.turn_on
@@ -123,8 +125,8 @@
   trigger:
     - platform: state
       entity_id:
-        - group.family
-      from: 'not_home'
+        - device_tracker.cr_iphone
+#         - group.family
       to: 'home'
   action:
     - service: switch.turn_off
@@ -148,7 +150,8 @@
     at: '06:00:00'
   condition:
     condition: state
-    entity_id: group.family
+    entity_id: device_tracker.cr_iphone
+#    entity_id: group.family
     state: 'home'
   action:
     - service: switch.turn_off

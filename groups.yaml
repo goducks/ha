@@ -1,19 +1,18 @@
 # Views
-# family_view:
-#   view: true
-#   name: Family
-#   entities:
-#     - group.family
 
 # Groups
 family:
   name: "Family"
+  view: false
+  all: false
   entities:
     - device_tracker.cr_iphone
     - device_tracker.teris_iphone
 
 homealarm:
   name: "Home Alarm Sensors"
+  view: false
+  all: false
   entities:
     - binary_sensor.front_doors
     - binary_sensor.patio_doors
@@ -23,6 +22,8 @@ homealarm:
 
 cameraswitches:
   name: "All Camera Switches"
+  view: false
+  all: false
   entities:
     - switch.front_door_state
     - switch.living_room_state

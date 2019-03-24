@@ -106,4 +106,4 @@ views:
               camera_image: camera.garage_1
             - type: picture
               image: '/local/black.jpg'
-#----------------------------------------------------------------------------
+
